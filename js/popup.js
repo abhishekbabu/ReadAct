@@ -230,17 +230,11 @@ function candidate_search(candidates, voter_id, actualMatches){
                         });
                     });
 
-
-
-
-                    console.log(JSON.stringify(highlights));
-                    console.log("AHHHH");
                     chrome.storage.sync.set({
                         "highlightInfo": highlights
                     }, function () {
                         console.log(JSON.stringify(highlights));
                         chrome.storage.sync.get("highlightInfo", function(data) {
-                            console.log(data.highlightInfo)
                         });
                         chrome.tabs.executeScript(null, {
                             file: "js/highlight.js"
